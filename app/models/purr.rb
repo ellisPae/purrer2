@@ -37,6 +37,12 @@ class Purr < ApplicationRecord
         class_name: :Purr,
         foreign_key: :original_purr_id
 
+    # def repurr 
+    #     Purr.find_by(original_purr_id: id)
+    #         .select { |p| p.content.includes(content) }
+    # end
+
+    
 
 
 end

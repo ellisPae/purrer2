@@ -59,6 +59,7 @@ group :development, :test do
   gem "devise"
   gem "omniauth"
   gem "irbtools"
+  gem "react_on_rails"
 end
 
 group :development do
