@@ -38,29 +38,25 @@ class User < ApplicationRecord
     source: :purr
 
 # Being followed:
-  has_many :passive_follows,
+  has_many :being_followeds,
     class_name: :Follow,
     foreign_key: :followee_id,
     dependent: :destroy
         
   has_many :followers,
-    through: :passive_follows,
+    through: :being_followeds,
     source: :follower
 
 # Following:
-  has_many :active_follows,
+  has_many :followings,
     class_name: :Follow,
     foreign_key: :follower_id,
     dependent: :destroy
         
   has_many :followees,
-    through: :active_follows,
+    through: :followings,
     source: :followee
 
-  def convert_date_string_to_date
-    
-  
-  end
 
 
 
