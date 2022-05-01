@@ -59,6 +59,8 @@ group :development, :test do
   gem "devise"
   gem "omniauth"
   gem "irbtools"
+  gem "webpacker"
+  gem "react-rails"
 end
 
 group :development do
