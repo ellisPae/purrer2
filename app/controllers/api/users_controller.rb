@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    before_action :authenticate_user!, only: %w(edit update)
+
     def index
         @users = User.all
         render :index
@@ -14,13 +16,12 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
     
         if @user.save
-            login(@user)
-            render :home
+            sign_in(@user)
+            render "devise/registrations/new"
         else
             render json: @user.errors.full_messages, status: 422
         end
     end
-
     
     
     
