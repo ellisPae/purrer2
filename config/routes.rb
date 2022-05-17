@@ -5,12 +5,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  namespace :api, defaults: { format: :json } do
-    resources :users, only: %w(index show)
-    resources :purrs
-    resources :likes
-    resources :follows
-  end
+  resources :users, only: %w(index show)
+  resources :purrs
+  resources :likes
+  resources :follows
 
 
 

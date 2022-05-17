@@ -1,4 +1,4 @@
-class Api::PurrsController < ApplicationController
+class PurrsController < ApplicationController
     
     before_action :authenticate_user!, only: %w(create edit update destroy)
 
@@ -9,7 +9,7 @@ class Api::PurrsController < ApplicationController
     
     def show
         @purr = Purr.find(params[:id])
-        render "api/purrs/show"
+        render :show
     end
 
     def create
@@ -51,7 +51,7 @@ class Api::PurrsController < ApplicationController
         render "api/users/show"
     end
 
-
+ 
 
     private
 
