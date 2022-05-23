@@ -1,0 +1,14 @@
+<h1>New Purr</h1>
+
+<body>
+    <%= form_with scope: :purr, url: purrs_path, local: true do |f| %>
+        <p> 
+            <%= f.label :content %>
+            <br>
+            <%= f.text_area :content %>
+        </p>
+        <p>
+            <%= f.submit label="Post"%>
+        </p>
+    <% end %>
+</body>

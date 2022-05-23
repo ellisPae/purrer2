@@ -12,12 +12,15 @@ class PurrsController < ApplicationController
         render :show
     end
 
+    def new
+    end
+
     def create
         @purr = Purr.new(purr_params)
         @purr.user_id = current_user.id
 
         if(@purr.save)
-            render "api/purrs/show"
+            render :show
         else
             render json @purrs.errors.full_messages, status: 422
         end
