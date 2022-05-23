@@ -4,7 +4,7 @@ class PurrsController < ApplicationController
 
     def index    
         @purrs = Purr.all
-        render "api/purrs/index"
+        render :index
     end
     
     def show
@@ -58,7 +58,4 @@ class PurrsController < ApplicationController
     def purr_params
         params.require(:purr).permit(:user_id, :content, :original_purr_id)
     end
-
-
-
 end

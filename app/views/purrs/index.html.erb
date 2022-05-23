@@ -1,0 +1,9 @@
+<h1>All Purrs</h1>
+
+<body>
+   <% @purrs.each do | purr | %>
+        <ul>
+         <li><%= purr.content %><li>
+        </ul>   
+    <% end %>
+</body>
